@@ -1,0 +1,46 @@
+cloudflare-app[app="discord"] {
+  display: block;
+  display: flex;
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  cloudflare-app[app="discord"] {
+    padding: .5em;
+  }
+}
+
+@media (max-width: 768px) {
+  cloudflare-app[app="discord"] > iframe {
+    padding: .5em 0;
+    width: 100% !important;
+  }
+}
+
+cloudflare-app[app="discord"] > iframe {
+  display: block;
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+
+cloudflare-app[app="discord"][data-horizontal-alignment="left"] {
+  justify-content: flex-start;
+}
+
+cloudflare-app[app="discord"][data-horizontal-alignment="center"] {
+  justify-content: center;
+}
+
+cloudflare-app[app="discord"][data-horizontal-alignment="right"] {
+  justify-content: flex-end;
+}
+
+cloudflare-app[app="discord"][data-horizontal-alignment="expand"] {
+  padding: 0;
+}
+
+cloudflare-app[app="discord"][data-horizontal-alignment="expand"] > iframe {
+  flex: 1 0 auto;
+  height: 100vh !important;
+}

@@ -1,0 +1,87 @@
+{
+  "resources": {
+    "body": [
+      {
+        "type": "style",
+        "src": "./source/app.css"
+      },
+      {
+        "type": "script",
+        "src": "./source/app.js"
+      }
+    ]
+  },
+  "preview": {
+    "handlers": [
+      {
+        "options": ["id", "theme", "location"],
+        "execute": "INSTALL_SCOPE.setOptionsReset(INSTALL_OPTIONS)"
+      },
+      {
+        "options": ["horizontalAlignment"],
+        "execute": "INSTALL_SCOPE.updateAlignment(INSTALL_OPTIONS)"
+      }
+    ]
+  },
+  "options": {
+    "properties": {
+      "id": {
+        "order": 0,
+        "title": "Widget ID",
+        "description": "You can get the widget ID from the widget tab in your Discord server settings. From this tab you can enable the widget and adjust your invite settings.",
+        "type": "string",
+        "placeholder": "00000000000000000",
+        "required": true
+      },
+
+      "location": {
+        "title": "Widget Location",
+        "description": "Where should the Discord widget appear?",
+        "order": 1,
+        "type": "object",
+        "format": "element",
+        "default": {
+          "selector": "body",
+          "method": "prepend"
+        }
+      },
+
+      "horizontalAlignment": {
+        "order": 2,
+        "title": "Horizontal alignment",
+        "description": "How should the widget sit in the page?",
+        "type": "string",
+        "default": "center",
+        "format": "radios",
+        "enum": [
+          "left",
+          "center",
+          "right",
+          "expand"
+        ],
+        "enumNames": {
+          "left": "Justify left",
+          "center": "Justify center",
+          "right": "Justify right",
+          "expand": "Stretch to fit the page"
+        }
+      },
+
+      "theme": {
+        "order": 3,
+        "title": "Widget Theme",
+        "type": "string",
+        "format": "radios",
+        "default": "dark",
+        "enum": [
+          "dark",
+          "light"
+        ],
+        "enumNames": {
+          "dark": "Dark",
+          "light": "Light"
+        }
+      }
+    }
+  }
+}
