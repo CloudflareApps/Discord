@@ -15,11 +15,11 @@
     element.setAttribute('app', 'discord')
     element.setAttribute('data-horizontal-alignment', options.horizontalAlignment)
 
-    vendorIframe = document.createElement('iframe')
     var id = options.id === '' && INSTALL_ID === 'preview' ? '339515332702240769' : options.id
 
     if (!id) return
 
+    vendorIframe = document.createElement('iframe')
     vendorIframe.src = 'https://discordapp.com/widget?id=' + id + '&theme=' + options.theme
     vendorIframe.width = 350
     vendorIframe.height = 500
